@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class Rack_Addresses {
+    static void rackAddresses(long base, long width, long n, long q, long[] queries, long[] result) {
+      for (int i=0;i<q;i++){
+        if(queries[i]<0 || queries[i]>n-1){
+          result[i]=-1;
+        }
+        else{
+      result[i]=base+(queries[i]*width);
+        }
+      }  
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        long base = sc.nextLong(), width = sc.nextLong(), n = sc.nextLong();
+        long q = sc.nextLong();
+        long[] queries = new long[(int) q];
+        long[] result = new long[(int) q];
+        for (int i = 0; i < q; i++) queries[i] = sc.nextLong();
+        rackAddresses(base, width, n, q, queries, result);
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < q; i++) {
+            sb.append(result[i]);
+            if (i + 1 < q) sb.append(' ');
+        }
+        System.out.println(sb);
+    }
+}
