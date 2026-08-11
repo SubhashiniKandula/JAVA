@@ -16,7 +16,7 @@ boolean[] seen = new boolean[26];
   }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String str = sc.nextLine().toLowercase();
+        String str = sc.nextLine().toLowerCase();
         duplicates(str);
         
 }
